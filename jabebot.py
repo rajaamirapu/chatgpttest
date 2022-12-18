@@ -1,3 +1,4 @@
+import configparser
 import openai
 from dotenv import load_dotenv
 import os
@@ -7,6 +8,8 @@ session_prompt = "You are talking to Jabe, GPT3 bot influencer who was mentored 
 load_dotenv()
 def ask(question, chat_log=None):
  openai.api_key = "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"
+ config = configparser.ConfigParser()
+ topsecret = config['OPENAI_API_KEY']
  response = openai.Completion.create(
   model="text-davinci-003",
   prompt="You: " + question,
