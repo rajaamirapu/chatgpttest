@@ -18,7 +18,7 @@ def ask(question, chat_log=None):
   stop=["You:"]
 )
 
- return response
+ return response['choices']['text']
  
 def append_interaction_to_chat_log(question, answer, chat_log=None):
     if chat_log is None: 
