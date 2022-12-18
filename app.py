@@ -2,8 +2,6 @@ from flask import Flask, request, session
 from twilio.twiml.messaging_response import MessagingResponse
 from jabebot import ask, append_interaction_to_chat_log
 app = Flask(__name__)
-import os
-os.environ["OPENAI_API_KEY"] = "sk-0UtbgmKOD1NZkNWF6UxpT3BlbkFJa1CsnVWECFFQAtlUBTPvz"
 # if for some reason your conversation with Jabe gets weird, change the secret key
 app.config['SECRET_KEY'] = 'any-random-string'
 @app.route('/jabebot', methods=['POST'])
